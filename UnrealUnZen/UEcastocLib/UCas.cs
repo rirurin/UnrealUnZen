@@ -82,8 +82,7 @@ namespace UEcastocLib
         {
             if (exportFromRoot)
             {
-                var firstPathSeparator = utoc.MountPoint.IndexOf("/");
-                if (firstPathSeparator != -1 && firstPathSeparator < utoc.MountPoint.Length - 1)
+                if (utoc.MountPoint.Length > 0)
                 {
                     outDir = Path.Combine(outDir, utoc.MountPoint.Substring(utoc.MountPoint.IndexOf("/") + 1)); // utoc mount points always use unix path separator
                 }

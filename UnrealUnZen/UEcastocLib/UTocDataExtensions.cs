@@ -20,12 +20,10 @@ namespace UEcastocLib
         {
             uint dirIdx = dirs[(int)pDir].FirstChildEntry;
             uint fileIdx = dirs[(int)pDir].FirstFileEntry;
-
             if (dirIdx == Constants.NoneEntry && fileIdx == Constants.NoneEntry)
             {
                 return;
             }
-
             while (dirIdx != Constants.NoneEntry)
             {
                 var dirEntry = dirs[(int)dirIdx];
@@ -81,14 +79,14 @@ namespace UEcastocLib
                 var strTable = new List<string>();
                 for (int i = 0; i < stringCount; i++)
                 {
-
                     strTable.Add(reader.ReadFString());
                 }
 
-                if (dirs[0].Name != Constants.NoneEntry)
+                /*if (dirs[0].Name != Constants.NoneEntry)
                 {
                     return new Tuple<string, string[]>(string.Empty, null);
                 }
+                */
 
                 var gamefilePaths = new List<GameFilePathData>();
 
