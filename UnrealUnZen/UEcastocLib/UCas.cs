@@ -78,9 +78,16 @@ namespace UEcastocLib
 
             return filesToUnpack;
         }
-        public static int UnpackUcasFiles(this UTocData utoc, string ucasPath, string outDir, string filter)
+        public static int UnpackUcasFiles(this UTocData utoc, string ucasPath, string outDir, string filter, bool exportFromRoot)
         {
-            outDir += utoc.MountPoint;
+            if (exportFromRoot)
+            {
+                var firstPathSeparator = utoc.MountPoint.IndexOf("/");
+                if (firstPathSeparator != -1 && firstPathSeparator < utoc.MountPoint.Length - 1)
+                {
+                    outDir = Path.Combine(outDir, utoc.MountPoint.Substring(utoc.MountPoint.IndexOf("/") + 1)); // utoc mount points always use unix path separator
+                }
+            }
             int filesUnpacked = 0;
 
             using (FileStream openUcas = File.OpenRead(ucasPath))

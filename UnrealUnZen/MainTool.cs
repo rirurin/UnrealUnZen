@@ -67,7 +67,7 @@ namespace UnrealUnZen
         private void UnpackBTN_Click(object sender, EventArgs e)
         {
             Directory.CreateDirectory(UTocFileAddress + "_Export");
-            int exportcount = UTocFile.UnpackUcasFiles(Path.ChangeExtension(UTocFileAddress, ".ucas"), UTocFileAddress + "_Export", RegexUnpack.Text);
+            int exportcount = UTocFile.UnpackUcasFiles(Path.ChangeExtension(UTocFileAddress, ".ucas"), UTocFileAddress + "_Export", RegexUnpack.Text, unpackFromMountRootToolStripMenuItem.Checked);
             MessageBox.Show(exportcount + " file(s) extracted!");
         }
 
@@ -160,6 +160,11 @@ namespace UnrealUnZen
         private void HelpFilter_Click(object sender, EventArgs e)
         {
             MessageBox.Show("this will filter the files to extract using the W wildcards separated by comma or semicolon, example {}.mp3,{}.txt;{}myname{}\r\nuse {} instead of * to avoid issues on Windows");
+        }
+
+        private void unpackFromMountRootToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            unpackFromMountRootToolStripMenuItem.Checked = !unpackFromMountRootToolStripMenuItem.Checked;
         }
     }
 }

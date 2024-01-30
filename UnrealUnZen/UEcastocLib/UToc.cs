@@ -156,7 +156,7 @@ namespace UEcastocLib
                     directoryIndexData = Helpers.DecryptAES(directoryIndexData, aesKey);
                 }
                 var directoryIndex = UTocDataExtensions.ParseDirectoryIndex(directoryIndexData, (int)udata.Header.EntryCount);
-                string mountPoint = directoryIndex.Item1;
+                udata.MountPoint = directoryIndex.Item1;
                 orderedPaths = directoryIndex.Item2;
 
                 if (orderedPaths == null)

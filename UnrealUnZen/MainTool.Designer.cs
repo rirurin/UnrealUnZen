@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTool));
             this.OpenTocBTN = new System.Windows.Forms.Button();
             this.UnpackBTN = new System.Windows.Forms.Button();
             this.ArchiveViewTV = new System.Windows.Forms.TreeView();
@@ -57,6 +56,8 @@
             this.repackUsingCustomManifestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpFilter = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.unpackFromMountRootToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,7 +242,8 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
+            this.toolStripDropDownButton1,
+            this.toolStripDropDownButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(428, 25);
@@ -257,7 +259,6 @@
             this.saveManifestToolStripMenuItem,
             this.fixManifestToolStripMenuItem,
             this.repackUsingCustomManifestToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(66, 22);
@@ -317,6 +318,25 @@
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Tools:";
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.unpackFromMountRootToolStripMenuItem});
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(62, 22);
+            this.toolStripDropDownButton2.Text = "Options";
+            // 
+            // unpackFromMountRootToolStripMenuItem
+            // 
+            this.unpackFromMountRootToolStripMenuItem.Checked = true;
+            this.unpackFromMountRootToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.unpackFromMountRootToolStripMenuItem.Name = "unpackFromMountRootToolStripMenuItem";
+            this.unpackFromMountRootToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.unpackFromMountRootToolStripMenuItem.Text = "Unpack from Mount Root";
+            this.unpackFromMountRootToolStripMenuItem.Click += new System.EventHandler(this.unpackFromMountRootToolStripMenuItem_Click);
             // 
             // MainTool
             // 
@@ -388,6 +408,8 @@
         private System.Windows.Forms.ToolStripMenuItem dontUseItIfYouDontKnowHowWorksToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem unpackFromMountRootToolStripMenuItem;
     }
 }
 
